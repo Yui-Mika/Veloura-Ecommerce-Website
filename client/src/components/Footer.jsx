@@ -1,0 +1,116 @@
+import { Link } from "react-router-dom";
+import { FaInstagram, FaTwitter, FaFacebookF, FaYoutube } from "react-icons/fa";
+
+const Footer = () => {
+  const linkSections = [
+    {
+      title: "Liên kết nhanh",
+      links: [
+        { name: "Trang chủ", path: "/" },
+        { name: "Bán chạy", path: "/collection" },
+        { name: "Ưu đãi", path: "/collection" },
+        { name: "Liên hệ", path: "/contact" },
+        { name: "Theo dõi đơn hàng", path: "/my-orders" },
+      ],
+    },
+  ];
+
+  const socialLinks = [
+    { icon: <FaInstagram />, name: "Instagram", url: "https://www.facebook.com/AnhNguyen10082000" },
+    { icon: <FaTwitter />, name: "Twitter", url: "https://www.facebook.com/AnhNguyen10082000" },
+    { icon: <FaFacebookF />, name: "Facebook", url: "https://www.facebook.com/AnhNguyen10082000" },
+    { icon: <FaYoutube />, name: "YouTube", url: "https://www.facebook.com/AnhNguyen10082000" },
+  ];
+
+  return (
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <div className="max-padd-container py-16">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-12 border-b border-gray-700">
+          {/* Brand Section */}
+          <div className="lg:col-span-2">
+            <Link 
+              to={"/"} 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-block mb-6"
+            >
+              <h2 className="text-3xl font-bold tracking-wider">
+                VELOURA<span className="text-gray-400"></span>
+              </h2>
+            </Link>
+            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+              Khám phá quần áo và giày dép thời trang trực tuyến, được chế tác cho sự thoải mái và chất lượng. 
+              Mua sắm những thiết kế thời trang nâng tầm phong cách của bạn và phù hợp với mọi lối sống.
+            </p>
+            
+            {/* Social Links */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wide mb-4">Theo dõi chúng tôi</h3>
+              <div className="flex gap-3">
+                {socialLinks.map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white hover:text-black flexCenter transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Link Sections */}
+          {linkSections.map((section, index) => (
+            <div key={index}>
+              <h3 className="text-base font-semibold mb-6 uppercase tracking-wide">
+                {section.title}
+              </h3>
+              <ul className="space-y-3">
+                {section.links.map((link, i) => (
+                  <li key={i}>
+                    <Link
+                      to={link.path}
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Section */}
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-500 text-sm">
+            © 2025 Veloura. Bảo lưu mọi quyền.
+          </p>
+          <div className="flex gap-6 text-sm">
+            <Link 
+              to="/contact" 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-gray-500 hover:text-white transition-colors"
+            >
+              Chính sách bảo mật
+            </Link>
+            <Link 
+              to="/contact" 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-gray-500 hover:text-white transition-colors"
+            >
+              Điều khoản dịch vụ
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
