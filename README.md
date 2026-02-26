@@ -1,6 +1,14 @@
-# 🛍️ Veloura - E-commerce Fashion Platform
+# 🛍️ Veloura - E-commerce Men's Clothing Platform
 
-> Hệ thống thương mại điện tử thời trang hiện đại với AI Chatbot & RAG
+> **⚠️ PERSONAL CONTRIBUTION NOTE**
+> This repository is a fork of my academic group project.
+> * **My Role:** Frontend Developer
+> * **My Tech Stack:** React, Tailwind CSS, Vite, React Router.
+> * **My Responsibilities:** I was specifically responsible for developing the frontend logic and user interface within the `client/` directory. This includes building the responsive layouts for the product listing, shopping cart, and checkout features.
+> * *(Note: The Backend architecture (FastAPI), AI Chatbot (RAG/Gemini), and MongoDB database were handled by my teammates).*
+> ---
+
+> A modern fashion e-commerce system featuring an AI Chatbot & RAG.
 
 ## 👥 Thành Viên Nhóm
 
